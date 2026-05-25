@@ -696,7 +696,7 @@ legend {
 
 /* Zebre Stripes , even itu untuk angka genap*/
 .data-table tbody tr:nth-child(even) { 
-    background-color: rgba(30, 41, 59, 0.5); 
+    background-color: rgba(30, 41, 59, 0.5);
     /* / Warna abu-abu yang lumayan lebur transparan /  */
 }
 
