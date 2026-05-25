@@ -654,3 +654,62 @@ legend {
     border: 1px solid #334155; 
     background: none; 
 }
+
+/* M11 - TABLE */
+.data-table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+    min-width: 600px;
+}
+
+.data-table caption { 
+    text-align: left; 
+    font-size: 0.85rem; 
+    color: #64748b; 
+    margin-bottom: 12px; 
+} 
+
+.data-table th, 
+.data-table td { 
+    padding: 12px 16px; 
+    text-align: center; 
+    border-bottom: 1px solid #334155; 
+    /* memberi garis di setiap akhir barisan */
+} 
+
+/* Title*/
+.data-table th{
+    background-color: #1e293b;
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    /* itu untuk buat tulisan yang di indeks misalnya ga kapital, tapi hasilnya mau kapital semua */
+}
+
+.data-table td { 
+    color: #94a3b8; 
+    font-size: 0.9rem; 
+} 
+
+/* Zebre Stripes , even itu untuk angka genap*/
+.data-table tbody tr:nth-child(even) { 
+    background-color: rgba(30, 41, 59, 0.5); 
+    /* / Warna abu-abu yang lumayan lebur transparan /  */
+}
+
+/* row hover */
+.data-table tbody tr:hover{
+    background-color: paleturquoise;
+}
+
+/* responsive table */
+@media (max-width: 760px) {
+    .data-table {font-size: 0.8rem;}
+    .data-table th,
+    .data-table td{
+        padding: 8px 10px;
+    }
+}
