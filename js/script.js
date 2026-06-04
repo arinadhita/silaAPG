@@ -15,7 +15,7 @@ function formatTanggal(dateStr) {
     const d = new Date(dateStr);
 
     // FORMAT (TGL - BLN - THN)
-    return d.getDate() + ' ' + bulan(d.getMonth) + ' ' + d.getFullYear()
+    return d.getDate() + ' ' + bulan[d.getMonth()] + ' ' + d.getFullYear()
 }
 
 // FUNGSI VALIDASI FORM --> jika tidak di isi maka tidak bisa di submit
@@ -43,12 +43,20 @@ function validasiForm() {
     // Berhasil
     // console 
     console.log("Data Pengajuan:", {
-        namaLengkap: namaLengkap,
+        nama: namaLengkap,
         nim: nim,
         prodi: prodi,
         layanan: layanan,
         tanggal: formatTanggal(tanggal)
     });
 
+    alert ('✅ Pengajuan Berhasil!\n' +
+        'Nama: ' + namaLengkap + '\n' +
+        'NIM: ' + nim + '\n' +
+        'Prodi: ' + prodi + '\n' +
+        'Layanan: ' + layanan  + '\n' +
+        'Tanggal: ' + formatTanggal(tanggal)
+    );
+    return true;
 
 }
