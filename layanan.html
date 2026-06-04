@@ -22,7 +22,7 @@
                 <!-- Link -->
                 <ul class="nav-menu">
                     <li><a href="index.html">Beranda</a></li>
-                    <li><a href="layanan.html"class="active">Ajukan Layanan</a></li>
+                    <li><a href="layanan.html" class="active">Ajukan Layanan</a></li>
                     <li><a href="riwayat.html">Riwayat</a></li>
                 </ul>
             </nav>
@@ -38,14 +38,14 @@
 
                 <!-- M10 - FORMS -->
                 <!-- forms untuk actionya ga terlalu mendalam jad pakai hastag aja dulu -->
-                <form action="#" method="post" class="form-card"> 
-                    <fieldset> 
+                <form action="#" method="post" class="form-card" onsubmit="return validasiForm()">
+                    <fieldset>
                         <legend>Data Pengajuan</legend>
 
                         <!-- Imput Nama Lengkap -->
                         <div class="form-group">
                             <label for="nama">Nama Lengkap</label>
-                            <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
+                            <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap">
                         </div>
 
                         <!-- Input NIM dan Prodi-->
@@ -53,56 +53,57 @@
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="NIM">NIM</label>
-                                <input type="text" id="nim" name="nim" placeholder="Contoh: 12345678" maxlength="8"  required> 
+                                <input type="text" id="nim" name="nim" placeholder="Contoh: 12345678" maxlength="8">
                             </div>
 
                             <!-- PROGRAM STUDI -->
                             <div class="form-group">
                                 <label for="prodi">Program Studi</label>
-                                    <select id="Text" name="prodi">
-                                        <option value="">— Pilih Program Studi —</option>
-                                        <option value="Sistem Informasi">Sistem Informasi</option> 
-                                        <option value="Teknik Informatika">Teknik Informatika</option> 
-                                        <option value="Teknologi Informasi">Teknologi Informasi</option>
-                                        <option value="Manajemen">Manajemen</option> 
-                                        <option value="Akuntansi">Akuntansi</option> 
-                                    </select>                      
+                                <select id="prodi" name="prodi">
+                                    <option value="">— Pilih Program Studi —</option>
+                                    <option value="Sistem Informasi">Sistem Informasi</option>
+                                    <option value="Teknik Informatika">Teknik Informatika</option>
+                                    <option value="Teknologi Informasi">Teknologi Informasi</option>
+                                    <option value="Manajemen">Manajemen</option>
+                                    <option value="Akuntansi">Akuntansi</option>
+                                </select>
                             </div>
                         </div>
-                            
-                        
-                        <div class="form-row"> 
-                            <div class="form-group"> 
-                                <label for="layanan">Jenis Layanan</label> 
-                                <select id="layanan" name="layanan" required> 
-                                    <option value="">— Pilih Layanan —</option> 
-                                    <option value="SKA">SKA — Surat Aktif Kuliah</option> 
-                                    <option value="CAK">CAK — Cuti Akademik</option> 
-                                    <option value="TNM">TNM — Transkrip Nilai</option> 
-                                    <option value="PDA">PDA — Perubahan Data</option> 
-                                </select> 
-                            </div> 
-    
-                            <div class="form-group"> 
-                                <label for="tanggal">Tanggal Pengajuan</label> 
-                                <input type="date" id="tanggal" name="tanggal" required> 
-                            </div> 
+
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="layanan">Jenis Layanan</label>
+                                <select id="layanan" name="layanan">
+                                    <option value="">— Pilih Layanan —</option>
+                                    <option value="SKA">SKA — Surat Aktif Kuliah</option>
+                                    <option value="CAK">CAK — Cuti Akademik</option>
+                                    <option value="TNM">TNM — Transkrip Nilai</option>
+                                    <option value="PDA">PDA — Perubahan Data</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="tanggal">Tanggal Pengajuan</label>
+                                <input type="date" id="tanggal" name="tanggal">
+                            </div>
                         </div>
 
                         <!-- KETERANGAN -->
-                        <div class="form-group"> 
-                            <label for="keterangan">Keterangan (opsional)</label> 
-                            <textarea id="keterangan" name="keterangan" rows="3" placeholder="Jelaskan alasan pengajuan Anda..."></textarea> 
+                        <div class="form-group">
+                            <label for="keterangan">Keterangan (opsional)</label>
+                            <textarea id="keterangan" name="keterangan" rows="3"
+                                placeholder="Jelaskan alasan pengajuan Anda..."></textarea>
                         </div>
 
                         <!-- BUTTON UNTUK SUBMIT DAN RESET -->
-                        <div class="form-actions"> 
-                            <button type="submit" class="btn btn-primary">🚀 Ajukan Sekarang</button> 
-                            <button type="reset" class="btn btn-outline">↺ Reset</button> 
-                        </div> 
-        <!-- form controls di dalam sini --> 
-                    </fieldset> 
-                </form> 
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">🚀 Ajukan Sekarang</button>
+                            <button type="reset" class="btn btn-outline">↺ Reset</button>
+                        </div>
+                        <!-- form controls di dalam sini -->
+                    </fieldset>
+                </form>
             </div>
         </section>
     </main>
@@ -126,6 +127,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="js/script.js"></script>
 
 </body>
 
