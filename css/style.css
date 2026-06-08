@@ -11,7 +11,6 @@
 body {
     background-color: #0f172a;
     color: #e2e8f0;
-    padding-top: 60px;
 }
 
 h1,
@@ -72,82 +71,37 @@ h3 {
    PAGE LAYOUT — SILA
    ================================ */
 
-/* --------------------------------
-   Container
-   Membatasi lebar konten maksimum 1000px
-   dan mengatur posisinya agar selalu
-   di tengah halaman (margin: 0 auto).
-   -------------------------------- */
 .container {
     max-width: 1000px;
     margin: 0 auto;
-    /* tengah horizontal */
     padding: 0 24px;
-    /* ruang kiri & kanan */
 }
 
-/* --------------------------------
-   Navbar (Bilah Navigasi) — menggunakan Flexbox
-   Flexbox mengatur elemen anak secara baris (row).
-   justify-content: space-between → logo kiri, nav kanan.
-   align-items: center → sejajar secara vertikal.
-   -------------------------------- */
 .navbar {
     background-color: #1e293b;
     border-bottom: 1px solid #334155;
     padding: 16px 0;
-    position: fixed;
-    /* fungsinya biar menempel di layar */
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
 }
 
 .navbar-inner {
     display: flex;
-    /* aktifkan flexbox */
     justify-content: space-between;
-    /* logo vs menu berjauhan */
     align-items: center;
-    /* sejajar vertikal */
 }
 
-/* Logo: teks brand di pojok kiri */
 .logo {
     font-size: 1.25rem;
     font-weight: 700;
     color: #f1f5f9;
 }
 
-/* Link navigasi berwarna abu dan memberi jarak kiri */
-nav a {
-    margin-left: 16px;
-    color: #94a3b8;
-    font-size: 0.9rem;
-}
-
-/* Link aktif / hover jadi berwarna putih */
-nav a:hover,
-nav a.active {
-    color: #f1f5f9;
-}
-
-/* --------------------------------
-   Hero Section
-   Bagian pembuka halaman yang mencolok,
-   biasanya memuat judul besar dan tombol aksi.
-   -------------------------------- */
 .hero {
     padding: 64px 0;
     text-align: center;
-    /* animasi M07 */
-    Animation: fadeIn 0.6s ease;
 }
 
 .hero h1 {
     font-size: 2.25rem;
-    /* = 36px, ukuran besar */
     margin-bottom: 16px;
 }
 
@@ -156,17 +110,10 @@ nav a.active {
     margin-bottom: 24px;
 }
 
-/* --------------------------------
-   Tombol (Buttons)
-   .btn    → gaya dasar semua tombol.
-   .btn-primary → tombol utama (biru, solid).
-   .btn-outline → tombol sekunder (hanya border).
-   -------------------------------- */
 .hero-buttons {
     display: flex;
     justify-content: center;
     gap: 12px;
-    /* jarak antar tombol */
 }
 
 .btn {
@@ -175,13 +122,9 @@ nav a.active {
     border-radius: 8px;
     font-size: 0.9rem;
     font-weight: 600;
-
-    /* transisi m07 */
     transition: background-color 0.3s, color 0.3s, transform 0.2s;
-
 }
 
-/* Tombol solid biru */
 .btn-primary {
     background-color: #2563eb;
     color: #fff;
@@ -189,11 +132,10 @@ nav a.active {
 
 .btn-primary:hover {
     background-color: #1d4ed8;
-    /* biru lebih gelap saat hover */
     color: #fff;
+    transform: translateY(-2px);
 }
 
-/* Tombol outline (hanya border, tanpa background) */
 .btn-outline {
     border: 1px solid #334155;
     color: #e2e8f0;
@@ -202,44 +144,33 @@ nav a.active {
 .btn-outline:hover {
     background-color: #1e293b;
     color: #f1f5f9;
+    transform: translateY(-2px);
 }
 
-/* Blok konten dengan garis atas sebagai pemisah antar section */
 .section {
     padding: 48px 0;
     border-top: 1px solid #334155;
 }
 
-/* --------------------------------
-   Cards Grid — menggunakan CSS Grid
-   grid-template-columns: 1fr 1fr → 2 kolom sama lebar.
-   gap: jarak antar kartu.
-   -------------------------------- */
 .cards-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /* 2 kolom */
     gap: 16px;
     margin-top: 16px;
 }
 
-/* Kartu individual */
 .card {
     background-color: #1e293b;
     border: 1px solid #334155;
     border-radius: 12px;
     padding: 20px;
-
-    /* transisi m07 */
     transition: border-color 0.3s, transform 0.2s;
 }
 
 .card:hover {
-    background-color: #475569;
+    border-color: #475569;
     transform: translateY(-2px);
-    /* menggeser sedikit ke atas (melayang) */
 }
-
 
 .card p {
     color: #94a3b8;
@@ -247,22 +178,15 @@ nav a.active {
     margin-bottom: 8px;
 }
 
-/* Badge kode kecil berwarna biru di dalam kartu */
 .card-code {
     font-size: 0.75rem;
     font-weight: 600;
     color: #60a5fa;
     background-color: rgba(37, 99, 235, 0.1);
-    /* biru transparan */
     padding: 2px 8px;
     border-radius: 4px;
 }
 
-/* --------------------------------
-   Steps Grid — menggunakan Flexbox
-   flex: 1 berarti setiap .step mengambil
-   lebar yang sama (membagi ruang secara merata).
-   -------------------------------- */
 .steps-grid {
     display: flex;
     gap: 16px;
@@ -271,28 +195,29 @@ nav a.active {
 
 .step {
     flex: 1;
-    /* lebar sama rata */
     text-align: center;
     background-color: #1e293b;
     border: 1px solid #334155;
     border-radius: 12px;
     padding: 24px 16px;
+    transition: border-color 0.3s;
 }
 
-/* Lingkaran nomor langkah berwarna biru */
+.step:hover {
+    border-color: #475569;
+}
+
 .step-number {
     width: 40px;
     height: 40px;
     background-color: #2563eb;
     color: #fff;
     border-radius: 50%;
-    /* membuat kotak jadi lingkaran */
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 700;
     margin: 0 auto 12px;
-    /* tengah horizontal + jarak bawah */
 }
 
 .step p {
@@ -300,11 +225,6 @@ nav a.active {
     font-size: 0.85rem;
 }
 
-/* --------------------------------
-   Stats Grid — Flexbox
-   Untuk menampilkan statistik angka
-   secara berdampingan.
-   -------------------------------- */
 .stats-grid {
     display: flex;
     gap: 16px;
@@ -319,7 +239,6 @@ nav a.active {
     padding: 24px;
 }
 
-/* Angka statistik besar berwarna biru */
 .stat-number {
     font-size: 2rem;
     font-weight: 700;
@@ -332,12 +251,6 @@ nav a.active {
     margin-top: 4px;
 }
 
-/* --------------------------------
-   Footer — menggunakan CSS Grid
-   grid-template-columns: 2fr 1fr →
-   kolom kiri 2x lebih lebar dari kolom kanan
-   (2/3 vs 1/3 lebar total).
-   -------------------------------- */
 .footer {
     border-top: 1px solid #334155;
     margin-top: 32px;
@@ -346,7 +259,6 @@ nav a.active {
 .footer-inner {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    /* 2 kolom tidak sama */
     gap: 32px;
     padding: 32px 0;
 }
@@ -363,19 +275,6 @@ nav a.active {
     font-size: 0.9rem;
 }
 
-/* Link di footer tampil sebagai block (baris baru per link) */
-.footer-inner a {
-    display: block;
-    color: #64748b;
-    font-size: 0.85rem;
-    margin-bottom: 4px;
-}
-
-.footer-inner a:hover {
-    color: #93c5fd;
-}
-
-/* Baris paling bawah footer (copyright) */
 .footer-bottom {
     border-top: 1px solid #334155;
     padding: 16px 0;
@@ -387,37 +286,36 @@ nav a.active {
     color: #64748b;
 }
 
-/* STRUKTUR NAVIGASI dan MENU */
-/* =========================== */
+
+/* ================================
+   STRUKTUR NAVIGASI & MENU — SILA
+   ================================ */
+
 .nav-menu {
     list-style: none;
     display: flex;
-    gap: 10px;
+    gap: 8px;
 }
 
-/* tampilan menu tiap link menu */
 .nav-menu li a {
     color: #94a3b8;
     font-size: 0.9rem;
-    border-radius: 6px;
     padding: 8px 12px;
+    border-radius: 6px;
+    transition: color 0.3s, background-color 0.3s;
 }
 
 .nav-menu li a:hover {
     color: #f1f5f9;
     background-color: rgba(255, 255, 255, 0.05);
-    /* Latar sedikit terang */
 }
 
-/* link yang aktif, bg biru redup */
 .nav-menu li a.active {
     color: #f1f5f9;
+    font-weight: 600;
     background-color: rgba(37, 99, 235, 0.15);
-
-
 }
 
-/* footer nav list */
 .footer-nav ul {
     list-style: none;
 }
@@ -429,21 +327,43 @@ nav a.active {
 .footer-nav ul li a {
     color: #64748b;
     font-size: 0.85rem;
+    transition: color 0.3s;
 }
 
 .footer-nav ul li a:hover {
     color: #93c5fd;
 }
 
-/* list menu - hamburger style */
 
-/*  menghapus/menyembunyikan sheckbox input dalam tampilan Hamburger  */
-.navToggle {
+/* ================================
+   MEDIA QUERY & RESPONSIF — SILA
+   ================================ */
+
+/* Animasi */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero {
+    animation: fadeIn 0.6s ease;
+}
+
+
+
+/* Hamburger */
+.nav-toggle {
     display: none;
 }
 
-.list-hamburger {
-    /* hilang di tampilan desktop */
+.hamburger {
     display: none;
     flex-direction: column;
     gap: 5px;
@@ -451,21 +371,34 @@ nav a.active {
     padding: 4px;
 }
 
-.list-hamburger span {
+.hamburger span {
     display: block;
     width: 24px;
-    height: 4px;
+    height: 3px;
     background-color: #f1f5f9;
     border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
 }
 
-/* mengatur tampilan layar menu */
+.nav-toggle:checked~label .hamburger span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.nav-toggle:checked~label .hamburger span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle:checked~label .hamburger span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Tablet & Mobile */
 @media (max-width: 768px) {
     .navbar-inner {
         flex-wrap: wrap;
     }
 
-    .list-hamburger {
+    .hamburger {
         display: flex;
     }
 
@@ -490,52 +423,43 @@ nav a.active {
         border-radius: 0;
     }
 
-    .navToggle:checked~nav .nav-menu {
+    .nav-toggle:checked~nav .nav-menu {
         display: flex;
     }
 
-
-    /* PRAKTEK  M07 */
     .nav-menu {
         gap: 4px;
     }
 
-    /* JUDUL HERO lebih kecil saat layar kecil */
     .hero h1 {
         font-size: 1.5rem;
-        /* dari 2.25 rem jadi 1.5 rem */
     }
 
-    /* tombol berubah menjadi vertikal dari atas ke bawah */
     .hero-buttons {
         flex-direction: column;
         align-items: center;
     }
 
-    /* card dari 2 kolom jadi 1 kolom, alias satu baris aja */
     .cards-grid {
         grid-template-columns: 1fr;
     }
 
-    /* step dan statistik berubah menjadi vertikal */
-    .steps-grid,
-    .stats-grid {
+    .steps-grid {
         flex-direction: column;
-
     }
 
-    /* footer dari 2 kolom menjadi 1 kolom */
+    .stats-grid {
+        flex-direction: column;
+    }
+
     .footer-inner {
         grid-template-columns: 1fr;
         gap: 24px;
-        text-align: center;
-
     }
 }
 
-/* responsive layar - ukuran layar kecill di phone  
-judul lebih kecill dan tombol lebar*/
-@media (max-width:480px) {
+/* Small Mobile */
+@media (max-width: 480px) {
     .hero h1 {
         font-size: 1.25rem;
     }
@@ -545,171 +469,272 @@ judul lebih kecill dan tombol lebar*/
         text-align: center;
     }
 
-}
-
-/* ANIMASI SECTION HERO */
-/* animasi fadeIN */
-/* from itu posisi awal 9tersembunyi, begeser ke bawah */
-/* posisi akhir (to) terlihat, posisi normal */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-        /* geser 20px ke bawah */
+    .form-row {
+        grid-template-columns: 1fr;
     }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-        /* posisi normal */
-    }
-
 }
 
 
-/* M10 FORM */
-.form-card { 
-    max-width: 640px; 
-    margin: 0 auto; 
-} 
+/* ================================
+   FORMS — SILA
+   ================================ */
 
-fieldset { 
-    border: 1px solid #334155; 
-    border-radius: 12px; 
-    padding: 24px; 
-    background-color: #1e293b; 
-} 
-
-legend { 
-    font-size: 1.1rem; 
-    font-weight: 600; 
-    color: #f1f5f9; 
-    padding: 0 8px; 
-} 
-
-.form-group { 
-    margin-bottom: 16px; 
-} 
-
-.form-group label { 
-    display: block; 
-    font-size: 0.875rem; 
-    font-weight: 600; 
-    color: #e2e8f0; 
-    margin-bottom: 6px; 
-} 
-
-.form-group input, 
-.form-group select, 
-.form-group textarea { 
-    width: 100%; 
-    padding: 10px 14px; 
-    background-color: #0f172a; 
-    border: 1px solid #334155; 
-    border-radius: 8px; 
-    color: #e2e8f0; 
-    font-family: inherit; 
-    font-size: 0.9rem; 
-    outline: none; 
-    transition: border-color 0.3s; 
-} 
-
-.form-group input:focus, 
-.form-group select:focus, 
-.form-group textarea:focus { 
-    border-color: #2563eb; 
-} 
-
-.form-group input::placeholder, 
-.form-group textarea::placeholder { 
-    color: #64748b; 
-} 
-
-.form-group select { 
-    cursor: pointer; 
-} 
-
-.form-group textarea { 
-    resize: vertical; 
-    min-height: 80px; 
+.form-card {
+    max-width: 640px;
+    margin: 0 auto;
 }
 
-.form-row { 
-    display: grid; 
-    grid-template-columns: 1fr 1fr; 
-    gap: 16px; 
+fieldset {
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 24px;
+    background-color: #1e293b;
 }
 
-.form-actions { 
-    display: flex; 
-    gap: 12px; 
-    margin-top: 24px; 
-} 
-.form-actions.btn { 
-    cursor: pointer; 
-    border: none; 
-    font-family: inherit; 
-} 
-.form-actions.btn-outline { 
-    border: 1px solid #334155; 
-    background: none; 
+legend {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #f1f5f9;
+    padding: 0 8px;
 }
 
-/* M11 - TABLE */
-.data-table{
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #e2e8f0;
+    margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 14px;
+    background-color: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    color: #e2e8f0;
+    font-family: inherit;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #2563eb;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #64748b;
+}
+
+.form-group select {
+    cursor: pointer;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.form-actions .btn {
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+}
+
+.form-actions .btn-outline {
+    border: 1px solid #334155;
+    background: none;
+}
+
+
+/* ================================
+   TABLES — SILA
+   ================================ */
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.data-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 16px;
     min-width: 600px;
 }
 
-.data-table caption { 
-    text-align: left; 
-    font-size: 0.85rem; 
-    color: #64748b; 
-    margin-bottom: 12px; 
-} 
+.data-table caption {
+    text-align: left;
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 12px;
+}
 
-.data-table th, 
-.data-table td { 
-    padding: 12px 16px; 
-    text-align: center; 
-    border-bottom: 1px solid #334155; 
-    /* memberi garis di setiap akhir barisan */
-} 
+.data-table th,
+.data-table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #334155;
+}
 
-/* Title*/
-.data-table th{
+.data-table th {
     background-color: #1e293b;
-    color: white;
+    color: #f1f5f9;
     font-size: 0.85rem;
     font-weight: 600;
-    letter-spacing: 0.5px;
     text-transform: uppercase;
-    /* itu untuk buat tulisan yang di indeks misalnya ga kapital, tapi hasilnya mau kapital semua */
+    letter-spacing: 0.5px;
 }
 
-.data-table td { 
-    color: #94a3b8; 
-    font-size: 0.9rem; 
-} 
+.data-table td {
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
 
-/* Zebre Stripes , even itu untuk angka genap*/
-.data-table tbody tr:nth-child(even) { 
+/* Zebra Stripes */
+.data-table tbody tr:nth-child(even) {
     background-color: rgba(30, 41, 59, 0.5);
-    /* / Warna abu-abu yang lumayan lebur transparan /  */
 }
 
-/* row hover */
-.data-table tbody tr:hover{
-    background-color: paleturquoise;
+/* Hover */
+.data-table tbody tr:hover {
+    background-color: #1e293b;
 }
 
-/* responsive table */
-@media (max-width: 760px) {
-    .data-table {font-size: 0.8rem;}
+@media (max-width: 768px) {
+    .data-table {
+        font-size: 0.8rem;
+    }
+
     .data-table th,
-    .data-table td{
+    .data-table td {
         padding: 8px 10px;
     }
+}
+
+
+/* ================================
+   JAVASCRIPT LANJUTAN — SILA
+   CSS untuk elemen dinamis yang dihasilkan
+   atau dikendalikan oleh JavaScript.
+   ================================ */
+
+/* --------------------------------
+   Form Error
+   Elemen untuk menampilkan pesan error
+   validasi form secara real-time (tanpa alert).
+   min-height: menjaga layout tidak melompat
+   saat pesan error muncul/hilang.
+   -------------------------------- */
+.form-error {
+    color: #f87171;
+    /* warna merah terang */
+    font-size: 0.875rem;
+    margin-bottom: 12px;
+    min-height: 20px;
+    /* tinggi minimum agar layout stabil */
+}
+
+/* --------------------------------
+   Toolbar
+   Baris atas tabel yang berisi teks info
+   (jumlah data) dan tombol aksi (hapus semua).
+   Menggunakan Flexbox dengan elemen berjauhan.
+   -------------------------------- */
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    /* kiri: info, kanan: tombol */
+    align-items: center;
+    margin-bottom: 16px;
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+/* --------------------------------
+   Empty State
+   Tampilan yang muncul saat tabel kosong
+   (belum ada data yang diinput).
+   -------------------------------- */
+.empty-state {
+    text-align: center;
+    padding: 48px 0;
+    color: #64748b;
+}
+
+.empty-state p {
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+}
+
+/* --------------------------------
+   Tombol Edit & Hapus (Per Baris)
+   Tombol kecil yang muncul di setiap baris tabel,
+   dibuat oleh JavaScript secara dinamis.
+   .btn-edit  → border biru, teks biru
+   .btn-hapus → border merah, teks merah
+   Saat hover: background terisi warna penuh.
+   -------------------------------- */
+
+/* Tombol Edit: outline biru */
+.btn-edit {
+    background: none;
+    border: 1px solid #60a5fa;
+    /* biru muda */
+    color: #60a5fa;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin-right: 4px;
+}
+
+/* Saat hover: background penuh biru, teks gelap */
+.btn-edit:hover {
+    background-color: #60a5fa;
+    color: #0f172a;
+    /* kontras teks di background biru */
+}
+
+/* Tombol Hapus: outline merah */
+.btn-hapus {
+    background: none;
+    border: 1px solid #f87171;
+    /* merah muda */
+    color: #f87171;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Saat hover: background penuh merah, teks gelap */
+.btn-hapus:hover {
+    background-color: #f87171;
+    color: #0f172a;
 }

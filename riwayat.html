@@ -13,12 +13,16 @@
 
 <body>
 
-    <!-- HEADER & NAVIGASI -->
     <header class="navbar">
         <div class="container navbar-inner">
             <a href="index.html" class="logo">🎓 SILA</a>
+            <input type="checkbox" id="navToggle" class="nav-toggle">
+            <label for="navToggle" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
             <nav>
-                <!-- Link -->
                 <ul class="nav-menu">
                     <li><a href="index.html">Beranda</a></li>
                     <li><a href="layanan.html">Ajukan Layanan</a></li>
@@ -33,78 +37,34 @@
             <div class="container">
                 <h1>Riwayat Pengajuan</h1>
                 <p class="section-desc">Daftar semua pengajuan layanan akademik yang telah Anda buat.</p>
-                
 
-                <!-- M11 - TABLES -->
-                <table class="data-table">
-                    <caption>Data Pengajuan Layanan Akademik</caption>
-                    <!-- NO, NAMA, NIM, LAYANAN, TANGGAL, STATUS -->
-                <thead>
-                    <tr>
-                        <th>NO</th>
-                        <th>NAMA</th>
-                        <th>NIM</th>
-                        <th>LAYANAN</th>
-                        <th>TANGGAL</th>
-                        <th>STATUS</th>
-                    </tr>
-                </thead>
+                <div class="toolbar">
+                    <span id="dataCount">0 pengajuan</span>
+                    <button id="btnHapusSemua" class="btn btn-outline" style="display: none;">🗑 Hapus Semua</button>
+                </div>
 
-                <!-- BODY -->
-                
-                <body>
-                    <!-- TAMPILAN DATA -->
-                    <tr>
-                        <td>1</td>
-                        <td>Arinadhita</td>
-                        <td>241121289</td>
-                        <td>SKA</td>
-                        <td>3 Mei 2026</td>
-                        <td>PROSES</td>
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Nama</th>
+                                <th>NIM</th>
+                                <th>Layanan</th>
+                                <th>Tanggal</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                            <!-- Data diisi oleh JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
 
-                    </tr>
-
-                    <tr>
-                        <td>2</td>
-                        <td>Josephine</td>
-                        <td>221124567</td>
-                        <td>TNM</td>
-                        <td>1 April 2026</td>
-                        <td>SELESAI</td>
-
-                    </tr>
-
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Jofanca</td>
-                        <td>201116789</td>
-                        <td>CKA</td>
-                        <td>19 Mei 2026</td>
-                        <td>PROSES</td>
-
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Agatha</td>
-                        <td>211123456</td>
-                        <td>PDA</td>
-                        <td>25 April 2026</td>
-                        <td>SELESAI</td>
-
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>Wgimen</td>
-                        <td>211121318</td>
-                        <td>PDA</td>
-                        <td>15 Mei 2026</td>
-                        <td>SELESAI</td>
-
-                    </tr>
-                </body>
-                
-                </table>
+                <div id="emptyState" class="empty-state" style="display: none;">
+                    <p>🗂️ Belum ada pengajuan.</p>
+                    <a href="layanan.html" class="btn btn-primary">➕ Ajukan Layanan</a>
+                </div>
             </div>
         </section>
     </main>
@@ -115,11 +75,13 @@
                 <strong>🎓 SILA</strong>
                 <p>Platform digital untuk pengajuan layanan akademik mahasiswa.</p>
             </div>
-            <div>
+            <div class="footer-nav">
                 <h4>Navigasi</h4>
-                <a href="index.html">Beranda</a>
-                <a href="layanan.html">Ajukan Layanan</a>
-                <a href="riwayat.html">Riwayat</a>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="layanan.html">Ajukan Layanan</a></li>
+                    <li><a href="riwayat.html">Riwayat</a></li>
+                </ul>
             </div>
         </div>
         <div class="footer-bottom">
@@ -128,6 +90,7 @@
             </div>
         </div>
     </footer>
+
     <script src="js/script.js"></script>
 
 </body>
