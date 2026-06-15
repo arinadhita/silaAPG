@@ -15,7 +15,7 @@
 
 //1. membaca data dari local storage dan menkonversi dari JSON ke Array
 function getData() {
-   cons raw = localStorage.getItem('sila_data');
+   const raw = localStorage.getItem('sila_data');
 
    // jika data ada, parse JSON -->A Array , jika data tidak ada maka kembalikan array kosong
    return raw ? JSON.parse(raw) : [];
